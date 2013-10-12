@@ -5,9 +5,9 @@ from todos.models import Todo, Project
 class TodoAdmin(admin.ModelAdmin):
     fieldsets = [
         ('Date information', {'fields': ['pub_date']}),
-        ('Todo info', {'fields': ['description', 'completed', 'user']})
+        ('Todo info', {'fields': ['description', 'completed', 'project']})
     ]
-    list_display = ('description', 'pub_date', 'completed', 'user')
+    list_display = ('description', 'pub_date', 'completed', 'project')
 
 
 class ProjectAdmin(admin.ModelAdmin):
