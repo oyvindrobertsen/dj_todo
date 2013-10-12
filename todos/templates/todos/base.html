@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="unicode">
+    <title>{% block title %}Todos{% endblock %}</title>
+    {% load staticfiles %}
+    <link href="{% static "todos/css/bootstrap/bootstrap.css" %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static "todos/css/main.css" %}" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+{% load staticfiles %}
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="{% static "todos/js/bootstrap.js" %}"></script>
+<div class="container">
+    <div class="page-header">
+        <h1><a href="/">{% block header_text %}Projects{% endblock %}</a>{% block header_user_info %}{% endblock %}</h1>
+    </div>
+    {% block content %}{% endblock %}
+</div>
+<div class="navbar-fixed-bottom">
+    <p class="footer-text text-center"><a href="https://github.com/oyvindrobertsen/dj_todo">Todos on Github</a></p>
+</div>
+</body>
+</html>

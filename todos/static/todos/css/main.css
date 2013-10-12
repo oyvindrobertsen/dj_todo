@@ -1,0 +1,42 @@
+body {
+    background-image: url("/static/todos/img/2560x1440.jpg") !important;
+}
+
+.page-header h1 {
+    color: #eeeeee;
+}
+
+.page-header h1 a{
+    color: #eeeeee;
+}
+
+.page-header h1 a:hover {
+    text-decoration: none;
+}
+
+.page-header small {
+    color: #eeeeee;
+}
+
+.footer-text a {
+    padding-top: 3px;
+    border-top: 1px solid #ededed;
+    color: #ededed;
+}
+
+.center-header {
+    text-align: center;
+}
+
+#login-form input[type="text"], input[type="password"], input[type="email"] {
+    height: 44px;
+}
+
+#header-user-info {
+    float: right;
+}
+
+#header-user-info a {
+    color: black;
+    font-weight: normal;
+}
