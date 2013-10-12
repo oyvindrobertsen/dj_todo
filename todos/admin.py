@@ -17,4 +17,4 @@ class ProjectAdmin(admin.ModelAdmin):
         ]
     list_display = ('title', 'start_date', 'user')
 
-admin.site.register(Todo, TodoAdmin, ProjectAdmin)
+admin.site.register(Todo, [TodoAdmin, ProjectAdmin])
