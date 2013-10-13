@@ -184,4 +184,5 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, '/../todos/', 'static'),
+    #"/Users/oyvindrobertsen/Documents/Code/Heroku/dj_todo/todos/static/"
 )
