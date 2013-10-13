@@ -34,10 +34,10 @@ def register(request):
 def login_view(request):
     username = request.POST['username']
     password = request.POST['password']
-    user = authenticate(username=username, password=password)
-    if user is not None:
-        if user.is_active:
-            login(request, user)
+    u = authenticate(username=username, password=password)
+    if u is not None:
+        if u.is_active:
+            login(request, u)
             return HttpResponseRedirect(reverse('todos:projects'))
         else:
             return HttpResponseRedirect(reverse('todos:index'))
