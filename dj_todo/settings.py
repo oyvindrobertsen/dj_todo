@@ -178,11 +178,11 @@ ALLOWED_HOSTS = ['*']
 
 # Static asset configuration
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.abspath(os.path.dirname(__name__))
 STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, '/../todos/', 'static'),
+    os.path.join(BASE_DIR, 'static'),
     #"/Users/oyvindrobertsen/Documents/Code/Heroku/dj_todo/todos/static/"
 )
