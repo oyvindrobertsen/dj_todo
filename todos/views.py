@@ -52,8 +52,8 @@ def logout_view(request):
 
 def user(request, username):
     u = User.objects.get(username=username)
-
-    return render(request, 'todos/user.html')
+    context = {'user': u}
+    return render(request, 'todos/user.html', context)
 
 @login_required
 def projects(request):

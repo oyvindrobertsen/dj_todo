@@ -1,15 +1,5 @@
 {% extends "todos/base.html" %}
 
-{% block header_user_info %}
-    <div id="header-user-info" class="btn-group">
-        <a class="btn" href="/user/{{ user.username }}"><i class="icon-user"></i> {{ user.username }}</a>
-        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-        <ul class="dropdown-menu">
-            <li><a href="/logout">Logout</a></li>
-        </ul>
-    </div>
-{% endblock %}
-
 {% block content %}
 {% if error_message %}
     <div class="alert alert-error">{{ error_message }}<a class="close" data-dismiss="alert" href="#">&times;</a></div>
