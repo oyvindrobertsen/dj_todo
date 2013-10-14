@@ -42,3 +42,7 @@ body {
     color: black;
     font-weight: normal;
 }
+
+.header-nav {
+    padding-right: 10px;
+}

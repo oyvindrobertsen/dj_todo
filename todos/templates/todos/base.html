@@ -14,11 +14,11 @@
 <div class="container">
     <div class="page-header">
         <h1>
-            <a href="/">{% block header_text %}Projects{% endblock %}</a>
+            {% block header_text %}Projects{% endblock %}
             {% block header_user_info %}
                 <div id="header-right">
-                    <a href="/">Home</a>
-                    <a href="/">Stats</a>
+                    <a href="/" class="header-nav">Home</a>
+                    <a href="/" class="header-nav">Stats</a>
                     {% if user.is_authenticated %}
                         <div class="btn-group" id="header-user-info">
                             <a class="btn" href="/user/{{ user.username }}"><i class="icon-user"></i> {{ user.username }}</a>
@@ -32,8 +32,10 @@
             {% endblock %}
         </h1>
     </div>
-    {% if error_message %}
-        <div class="alert alert-error">{{ error_message }}<a class="close" data-dismiss="alert" href="#">&times;</a></div>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-error">{{ message }}<a class="close" data-dismiss="alert" href="#">&times;</a></div>
+        {% endfor %}
     {% endif %}
     {% block content %}{% endblock %}
 </div>
