@@ -23,7 +23,8 @@ def register(request):
         if request.method == 'POST':
             form = UserRegistrationForm(request.POST)
             if form.is_valid():
-                form.save()
+                u = form.save()
+                login(request, u)
             return HttpResponseRedirect(reverse('todos:index'))
         else:
             form = UserRegistrationForm()

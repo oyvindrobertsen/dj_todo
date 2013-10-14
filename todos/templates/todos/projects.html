@@ -1,9 +1,6 @@
 {% extends "todos/base.html" %}
 
 {% block content %}
-{% if error_message %}
-    <div class="alert alert-error">{{ error_message }}<a class="close" data-dismiss="alert" href="#">&times;</a></div>
-{% endif %}
 {% if project_list %}
     <div class="row">
         {% for project in project_list %}

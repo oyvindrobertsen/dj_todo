@@ -1,4 +1,13 @@
 {% extends 'todos/base.html' %}
+
+{% block title %}
+    User - {{ user.username }}
+{% endblock %}
+
+{% block header_text %}
+    User info
+{% endblock %}
+
 {% block content %}
     <div class="well">
         {{ user.username }}

@@ -32,8 +32,10 @@ body {
     height: 44px;
 }
 
-#header-user-info {
+#header-right {
     float: right;
+    color: #ededed;
+    font-size: 14pt;
 }
 
 #header-user-info a {
