@@ -28,10 +28,6 @@ body {
     text-align: center;
 }
 
-#login-form input[type="text"], input[type="password"], input[type="email"] {
-    height: 44px;
-}
-
 #header-right {
     float: right;
     color: #ededed;
@@ -45,4 +41,12 @@ body {
 
 .header-nav {
     padding-right: 10px;
+}
+
+.form-control {
+    margin-bottom: 10px;
+}
+
+form {
+    margin-bottom: 5px;
 }

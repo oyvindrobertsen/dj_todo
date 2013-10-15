@@ -6,6 +6,7 @@
     {% load staticfiles %}
     <link href="{% static "todos/css/bootstrap/bootstrap.css" %}" rel="stylesheet" type="text/css"/>
     <link href="{% static "todos/css/main.css" %}" rel="stylesheet" type="text/css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 {% load staticfiles %}
@@ -21,9 +22,9 @@
                     <a href="/" class="header-nav">Stats</a>
                     {% if user.is_authenticated %}
                         <div class="btn-group" id="header-user-info">
-                            <a class="btn" href="/user/{{ user.username }}"><i class="icon-user"></i> {{ user.username }}</a>
-                            <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-                            <ul class="dropdown-menu">
+                            <button type="button" class="btn btn-default"><a href="/user/{{ user.username }}">{{ user.username }}</a></button>
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                            <ul class="dropdown-menu" role="menu">
                                 <li><a href="/logout">Logout</a></li>
                             </ul>
                         </div>
@@ -34,7 +35,7 @@
     </div>
     {% if messages %}
         {% for message in messages %}
-            <div class="alert alert-error">{{ message }}<a class="close" data-dismiss="alert" href="#">&times;</a></div>
+            <div class="alert alert-info alert-dismissable">{{ message }}<a class="close" data-dismiss="alert" href="#">&times;</a></div>
         {% endfor %}
     {% endif %}
     {% block content %}{% endblock %}

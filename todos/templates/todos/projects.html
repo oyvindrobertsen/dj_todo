@@ -4,7 +4,7 @@
 {% if project_list %}
     <div class="row">
         {% for project in project_list %}
-            <div class="span6">
+            <div class="col-md-6">
                 <div class="well">
                     <h3><a href="/project/{{ project.id }}">{{ project.title }}</a></h3>
                     <table class="table">
@@ -13,15 +13,15 @@
                                 <tr id="todo_{{ todo.id }}">
                                     <td><input type="checkbox" checked onclick="complete_todo({{ todo.id }})"></td>
                                     <td>{{ todo.description }}</td>
-                                    <td><a href="/todo/{{ todo.id }}"><i class="icon-edit"></i></a></td>
-                                    <td><a href="#" onclick="del_todo({{ todo.id }})" id="delete_{{ todo.id }}" class="delete_link"><i class="icon-trash"></i></a></td>
+                                    <td><a href="/todo/{{ todo.id }}"><span class="glyphicon glyphicon-edit"></span></a></td>
+                                    <td><a href="#" onclick="del_todo({{ todo.id }})" id="delete_{{ todo.id }}" class="delete_link"><span class="glyphicon glyphicon-trash"></span></a></td>
                                 </tr>
                             {% else %}
                                 <tr id="todo_{{ todo.id }}">
                                     <td><input type="checkbox" onclick="complete_todo({{ todo.id }})"></td>
                                     <td>{{ todo.description }}</td>
-                                    <td><a href="/todo/{{ todo.id }}"><i class="icon-edit"></i></a></td>
-                                    <td><a href="#" onclick="del_todo({{ todo.id }})" id="delete_{{ todo.id }}" class="delete_link" style="visibility:hidden"><i class="icon-trash"></i></a></td>
+                                    <td><a href="/todo/{{ todo.id }}"><span class="glyphicon glyphicon-edit"></span></a></td>
+                                    <td><a href="#" onclick="del_todo({{ todo.id }})" id="delete_{{ todo.id }}" class="delete_link" style="visibility:hidden"><span class="glyphicon glyphicon-trash"></span></a></td>
                                 </tr>
                             {% endif %}
                         {% endfor %}
@@ -29,8 +29,8 @@
                     <form action="{% url 'todos:submit_todo' %}" method="post" class="form-inline">
                         {% csrf_token %}
                         <input type="hidden" name="project_id" value="{{ project.id }}"/>
-                        <input type="text" name="description" placeholder="Get milk"/>
-                        <button type="submit" class="btn">Add</button>
+                        <input type="text" name="description" placeholder="Get milk" class="form-control"/>
+                        <button type="submit" class="btn btn-primary btn-block">Add</button>
                     </form>
                 </div>
             </div>
@@ -46,14 +46,16 @@
     <h3>Add a project</h3>
     <form action="{% url 'todos:submit_project' %}" method="post" class="form-inline">
         {% csrf_token %}
-        <input type="text" name="title" placeholder="Title goes here"/>
-        <button type="submit" class="btn">Add</button>
+        <div class="row">
+            <div class="col-lg-4">
+                <input type="text" name="title" placeholder="Title goes here" class="form-control"/>
+                <button type="submit" class="btn btn-primary form-control">Add</button>
+            </div>
+        </div>
     </form>
 </div>
 
 <script>
-    $(".alert").alert();
-
     function del_todo(todo_id) {
         $.post( "{% url 'todos:delete' %}", { id: todo_id, csrfmiddlewaretoken:'{{csrf_token}}' }, function (response) {
             $("#todo_" + todo_id).remove()
