@@ -22,7 +22,7 @@
                     <a href="/" class="header-nav">Stats</a>
                     {% if user.is_authenticated %}
                         <div class="btn-group" id="header-user-info">
-                            <button type="button" class="btn btn-default"><a href="/user/{{ user.username }}">{{ user.username }}</a></button>
+                            <a href="/user/{{ user.username }}" class="btn btn-default">{{ user.username }}</a>
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="/logout">Logout</a></li>
