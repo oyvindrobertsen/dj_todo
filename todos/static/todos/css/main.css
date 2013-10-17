@@ -18,7 +18,7 @@ body {
     color: #eeeeee;
 }
 
-.footer-text a {
+.footer-text-wide, .footer-text-wide a {
     padding-top: 3px;
     border-top: 1px solid #ededed;
     color: #ededed;

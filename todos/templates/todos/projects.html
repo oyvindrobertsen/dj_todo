@@ -6,7 +6,7 @@
         {% for project in project_list %}
             <div class="col-md-6">
                 <div class="well">
-                    <h3><a href="/project/{{ project.id }}">{{ project.title }}</a></h3>
+                    <h3 class="center-header"><a href="/project/{{ project.id }}">{{ project.title }}</a></h3>
                     <table class="table">
                         {% for todo in project.todo_set.all %}
                             {% if todo.completed %}

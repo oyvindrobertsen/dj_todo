@@ -11,19 +11,19 @@
             {% if todo.completed %}
                 <dd><span class="label label-success">✓</span></dd>
             {% else %}
-                <dd><span class="label label-important">X</span></dd>
+                <dd><span class="label label-danger">X</span></dd>
             {% endif %}
         </dl>
-        <ul class="inline">
+        <ul class="list-inline">
             <li><form action="{% url 'todos:delete' %}" method="post" class="form-inline">
                 {% csrf_token %}
                 <input type="hidden" name="id" value="{{ todo.id }}" />
-                <button type="submit" class="btn">Delete</button>
+                <button type="submit" class="btn btn-danger">Delete</button>
             </form></li>
             <li><form action="{% url 'todos:complete' %}" method="post" class="form-inline">
                 {% csrf_token %}
                 <input type="hidden" name="id" value="{{ todo.id }}" />
-                <button type="submit" class="btn">Complete</button>
+                <button type="submit" class="btn btn-success">Complete</button>
             </form></li>
         </ul>
     {% else %}
