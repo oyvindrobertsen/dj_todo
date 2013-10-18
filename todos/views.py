@@ -24,6 +24,7 @@ def register(request):
             form = UserRegistrationForm(request.POST)
             if form.is_valid():
                 u = form.save()
+                authenticate(u)
                 login(request, u)
             return redirect('todos:index')
         else:

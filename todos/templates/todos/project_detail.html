@@ -2,7 +2,7 @@
 {% block header_text %}{{ project.title }}{% endblock %}
 {% block content %}
 <div class="well">
-    <h3>Tasks</h3>
+    <h2 class="center-header">Tasks</h2>
     <table class="table">
         {% for todo in project.todo_set.all %}
             {% if todo.completed %}
@@ -10,7 +10,7 @@
                     <td><input type="checkbox" checked onclick="complete_todo({{ todo.id }})"></td>
                     <td>{{ todo.description }}</td>
                     <td><a href="/todo/{{ todo.id }}"><span class="glyphicon glyphicon-edit"></span></a></td>
-                    <td><a href="#" onclick="del_todo({{ todo.id }})" id="delete_{{ todo.id }}" class="delete_link"><span class="glyphicon glyphicon-trash"></span></span></a></td>
+                    <td><a href="#" onclick="del_todo({{ todo.id }})" id="delete_{{ todo.id }}" class="delete_link"><span class="glyphicon glyphicon-trash"></span></a></td>
                 </tr>
             {% else %}
                 <tr id="todo_{{ todo.id }}">
