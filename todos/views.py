@@ -23,8 +23,8 @@ def register(request):
         if request.method == 'POST':
             form = UserRegistrationForm(request.POST)
             if form.is_valid():
-                u = form.save()
-                authenticate(u)
+                form.save()
+                u = authenticate(username=request.POST['username'], password=request.POST['password1'])
                 login(request, u)
             return redirect('todos:index')
         else:
