@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.template import RequestContext
+import hashlib
 
 
 def index(request):
@@ -57,7 +58,8 @@ def logout_view(request):
 
 def user(request, username):
     u = get_object_or_404(User, username=username)
-    context = {'user': u}
+    gravatar_hash = hashlib.md5(u.email.lower()).hexdigest()
+    context = {'user': u, 'gravatar_hash': gravatar_hash}
     return render(request, 'todos/user.html', context)
 
 
