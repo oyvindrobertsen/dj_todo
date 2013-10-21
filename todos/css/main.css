@@ -1,0 +1,52 @@
+body {
+    background-image: url("../img/tweed_@2X.png") !important;
+}
+
+.page-header h1 {
+    color: #eeeeee;
+}
+
+.page-header h1 a{
+    color: #eeeeee;
+}
+
+.page-header h1 a:hover {
+    text-decoration: none;
+}
+
+.page-header small {
+    color: #eeeeee;
+}
+
+.footer-text-wide, .footer-text-wide a {
+    padding-top: 3px;
+    border-top: 1px solid #ededed;
+    color: #ededed;
+}
+
+.center-header {
+    text-align: center;
+}
+
+#header-right {
+    float: right;
+    color: #ededed;
+    font-size: 14pt;
+}
+
+#header-user-info a {
+    color: black;
+    font-weight: normal;
+}
+
+.header-nav {
+    padding-right: 10px;
+}
+
+.form-control {
+    margin-bottom: 10px;
+}
+
+form {
+    margin-bottom: 5px;
+}

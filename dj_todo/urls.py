@@ -6,5 +6,6 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^', include('todos.urls', namespace="todos")),
+    url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
