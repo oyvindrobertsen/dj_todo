@@ -39,4 +39,5 @@ nosetests.xml
 .project
 .pydevproject
 .idea/
+grappelli/
 todo
